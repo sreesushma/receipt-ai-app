@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receipt AI</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-white flex items-center justify-center">
+
+<div class="w-full max-w-xl p-8 rounded-3xl bg-white/10 backdrop-blur-xl shadow-2xl border border-white/20">
+
+    <h1 class="text-3xl font-bold text-center mb-2">Receipt Analyzer</h1>
+    <p class="text-center text-slate-300 mb-6">Upload a receipt and extract structured data instantly</p>
+
+    <!-- Drag & Drop Zone -->
+    <form id="uploadForm" class="space-y-4">
+        <label class="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-white/30 rounded-2xl cursor-pointer hover:border-blue-400 transition">
+            <span class="text-slate-300">Drag & drop receipt or click to upload</span>
+            <input type="file" id="fileInput" class="hidden" accept="image/*" required>
+        </label>
+
+        <button class="w-full bg-blue-500 hover:bg-blue-600 py-3 rounded-xl font-semibold transition">
+            Analyze Receipt
+        </button>
+    </form>
+
+    <!-- Image Preview -->
+    <div id="previewContainer" class="mt-6 hidden">
+        <p class="text-sm text-slate-300 mb-2">Preview</p>
+        <img id="previewImage" class="rounded-xl shadow-lg max-h-60 mx-auto">
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="text-center mt-4 hidden">
+        <div class="animate-pulse text-blue-300">Analyzing receipt...</div>
+    </div>
+
+    <!-- Results -->
+    <div id="result" class="mt-6 space-y-3"></div>
+
+     <a href="/download" 
+   class="block text-center mt-4 bg-green-500 hover:bg-green-600 py-2 rounded-xl">
+   Download Expense Sheet
+</a>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
